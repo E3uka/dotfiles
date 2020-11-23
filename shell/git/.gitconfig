@@ -1,0 +1,12 @@
+[user]
+	email = ebuka7@outlook.com
+	name = Ebuka Agbanyim
+
+[ui "color"]
+	ui = always
+
+[color]
+	ui = true
+
+[merge]
+	tool = nvim -d
