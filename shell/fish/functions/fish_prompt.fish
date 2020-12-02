@@ -1,1 +1,1 @@
-/home/ebuka/.local/share/omf/themes/simple-ass-prompt/fish_prompt.fish
+/home/ebuka/.local/share/omf/themes/gnuykeaj/fish_prompt.fish
