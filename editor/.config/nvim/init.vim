@@ -16,10 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
   
 " Themes
-Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-solarized8'
-Plug 'arcticicestudio/nord-vim'
-Plug 'rakr/vim-one'
+Plug 'huyvohcmc/atlas.vim'
 
 " Editor
 Plug 'scrooloose/nerdcommenter'
@@ -101,18 +98,16 @@ set shortmess+=c
 set ruler
 
 set termguicolors
-let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
-set background=dark
+colorscheme atlas
 
-"hi Normal guibg=NONE disables background
+hi Normal guibg=NONE " disables background
 
 " =============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " =============================================================================
 
 " markdown column
-au FileType markdown set colorcolumn=
+au FileType markdown set colorcolumn=100
 
 " markdown column
 au FileType sql set colorcolumn=
