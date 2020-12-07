@@ -14,7 +14,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
-Plug 'huyvohcmc/atlas.vim'
+Plug 'morhetz/gruvbox'
 
 " Editor
 Plug 'scrooloose/nerdcommenter'
@@ -29,6 +29,7 @@ Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
+Plug 'lervag/vimtex'
 
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
@@ -96,16 +97,17 @@ set shortmess+=c
 set ruler
 
 set termguicolors
-colorscheme atlas
+colorscheme gruvbox
 
 hi Normal guibg=NONE " disables background
+hi Normal guifg=#e8e8e8 " make text just off-white
 
 " =============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " =============================================================================
 
 " markdown column
-au FileType markdown set colorcolumn=100
+au FileType markdown set colorcolumn=80
 
 " markdown column
 au FileType sql set colorcolumn=
@@ -120,9 +122,16 @@ au FileType php set colorcolumn=100
 au FileType rust set colorcolumn=100
 let g:rustfmt_autosave = 1
 
-
 "Do not autoclose
 let g:autoclose = 0
+
+" LaTeX settings
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
 
 " =============================================================================
 " " # KEYBOARD SHORTCUTS
@@ -159,7 +168,7 @@ nnoremap <C-y> 3<C-y>
 
 "NerdTree
 nmap <silent> se :NERDTreeToggle<Return>
-let g:NERDTreeWinSize=35
+let g:NERDTreeWinSize=25
 
 " FZF settings
 nnoremap <leader><leader>f :Files<CR>
@@ -201,7 +210,6 @@ let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 "let g:go_fmt_command = "goImports"
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-
 
 " -------------------COC GITHUB STUFF------------------------------------
 
@@ -246,7 +254,6 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if has('patch8.1.1068')
@@ -255,8 +262,6 @@ if has('patch8.1.1068')
 else
     imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
 endif
-
-
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
