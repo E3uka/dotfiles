@@ -6,5 +6,5 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-set -g simple_ass_prompt_greeting "Let's Go!"
-
+# export display variable
+set -Ux DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
