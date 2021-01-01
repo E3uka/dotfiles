@@ -184,6 +184,7 @@ nnoremap <leader>r :Rg<CR>
 "Highlighting
 nnoremap <silent> <leader>h :syntax off<CR>
 nnoremap <silent> <leader><leader>h :syntax on<CR>
+nmap <silent> * yiw<Esc>: let @/ = @s<CR>
 
 "Damian Conway Setups
 nmap S :%s//g<LEFT><LEFT>
@@ -191,6 +192,7 @@ nnoremap v <C-V>
 nnoremap <C-V> v
 nmap <silent> <BS> :nohlsearch<CR>
 nmap <expr> M ':%s/' .@/ . '//g<LEFT><LEFT>'
+nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 "Ebuka Special
 nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
