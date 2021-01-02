@@ -184,7 +184,6 @@ nnoremap <leader>r :Rg<CR>
 "Highlighting
 nnoremap <silent> <leader>h :syntax off<CR>
 nnoremap <silent> <leader><leader>h :syntax on<CR>
-nmap <silent> * yiw<Esc>: let @/ = @s<CR>
 
 "Damian Conway Setups
 nmap S :%s//g<LEFT><LEFT>
