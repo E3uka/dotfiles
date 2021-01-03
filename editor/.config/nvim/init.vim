@@ -158,9 +158,23 @@ nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
 
 "vim tabs
+function! s:list_cmd()
+	let base = fnamemodify(expand('%'), ':h:.:S')
+	return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
+endfunction
+
+command! -bang -nargs=? -complete=dir Files
+	\ call fzf#vim#files(<q-args>, {'source': s:list_cmd(),
+	\                               'options': '--tiebreak=index'}, <bang>0)
+
 nmap <silent> tn :tabnext<Return>
 nmap <silent> tp :tabprev<Return>
-nmap te :tabedit
+
+"open new file adjacent to current file
+nmap te :e <C-R>=expand("%:p:h") . "/" <CR>
+
+"open new file in new tab adjacent to current file
+nmap tE :tabedit <C-R>=expand("%:p:h") . "/" <CR>
 
 "vim scrolling speedup
 nnoremap <C-e> 3<C-e>
