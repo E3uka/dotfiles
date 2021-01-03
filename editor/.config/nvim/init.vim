@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 " GUI 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
@@ -19,13 +18,10 @@ Plug 'morhetz/gruvbox'
 " Editor
 Plug 'scrooloose/nerdcommenter'
 Plug 'machakann/vim-highlightedyank'
-Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
