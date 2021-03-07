@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export DISPLAY:192\x2e168\x2e192\x2e1\x3a0\x2e0
+SETUVAR --export DISPLAY:172\x2e24\x2e112\x2e1\x3a0\x2e0
 SETUVAR --export EDITOR:nvim
 SETUVAR --export FZF_DEFAULT_COMMAND:rg\x20\x2d\x2dfiles\x20\x2d\x2dhidden\x20\x2d\x2dfollow\x20\x2dg\x20\x22\x21\x2egit/\x22
 SETUVAR __fish_initialized:3100

@@ -26,6 +26,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'lervag/vimtex'
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Fuzzy finder
 Plug 'junegunn/fzf.vim'
@@ -116,6 +119,9 @@ au FileType php set colorcolumn=100
 
 " Rust
 au FileType rust set colorcolumn=100
+
+" Rust
+au FileType javascript set colorcolumn=100
 let g:rustfmt_autosave = 1
 
 "Do not autoclose

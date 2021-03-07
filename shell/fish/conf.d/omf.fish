@@ -6,8 +6,11 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
-# export display variable
+# export display variable.
 set -Ux DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
-# replace fzf with ripgrep
+# replace fzf with ripgrep.
 set -Ux FZF_DEFAULT_COMMAND 'rg --files --hidden --follow -g "!.git/"'
+
+# use latest version of node upon entry.
+nvm use --lts --silent
