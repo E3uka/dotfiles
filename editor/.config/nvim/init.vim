@@ -108,7 +108,7 @@ hi Normal guifg=#e8e8e8 " make text just off-white
 " markdown column
 au FileType markdown set colorcolumn=80
 
-" markdown column
+" SQL column
 au FileType sql set colorcolumn=
 
 " Python
@@ -120,11 +120,20 @@ au FileType php set colorcolumn=100
 " Rust
 au FileType rust set colorcolumn=100
 
-" Rust
+" Javascript/JSON
 au FileType javascript set colorcolumn=100
+au FileType javascript set shiftwidth=2
+au FileType javascript set softtabstop=2
+au FileType javascript set tabstop=2
+au FileType json set colorcolumn=
+au FileType json set shiftwidth=2
+au FileType json set softtabstop=2
+au FileType json set tabstop=2
+
+" Yes please
 let g:rustfmt_autosave = 1
 
-"Do not autoclose
+" Do not autoclose
 let g:autoclose = 0
 
 " LaTeX settings
