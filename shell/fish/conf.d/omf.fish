@@ -13,4 +13,4 @@ set -Ux DISPLAY (cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}
 set -Ux FZF_DEFAULT_COMMAND 'rg --files --hidden --follow -g "!.git/"'
 
 # use latest version of node upon entry.
-nvm use --lts --silent
+# nvm use --lts --silent --no-use
