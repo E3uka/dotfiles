@@ -14,6 +14,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 
 " Editor
 Plug 'scrooloose/nerdcommenter'
@@ -96,8 +97,9 @@ set shortmess+=c
 set ruler
 
 set termguicolors
-colorscheme gruvbox
+colorscheme dracula
 
+" hi Normal guibg=#282A36 " 
 hi Normal guibg=NONE " disables background
 hi Normal guifg=#e8e8e8 " make text just off-white
 
@@ -215,7 +217,10 @@ nmap <expr> M ':%s/' .@/ . '//g<LEFT><LEFT>'
 nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 "Ebuka Special
+" this one is called... huh?
 nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
+nnoremap <C-_> :call NERDComment(0,"toggle")<Return>
+vnoremap <C-_> :call NERDComment(0,"toggle")<Return>
 
 "Fatih Golang minis
 nmap gb :GoBuild<Return>
@@ -340,8 +345,14 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
+
+" Use Tab to indent forward and backwards in normal mode
+nmap <Tab> >>
+nmap <s-Tab> <<
+vmap <Tab> >>
+vmap <s-Tab> <<
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
