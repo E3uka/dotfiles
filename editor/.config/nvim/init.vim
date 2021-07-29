@@ -14,7 +14,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
 Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
+Plug 'axvr/photon.vim'
 
 " Editor
 Plug 'scrooloose/nerdcommenter'
@@ -97,11 +97,10 @@ set shortmess+=c
 set ruler
 
 set termguicolors
-colorscheme dracula
+colorscheme antiphoton
 
-" hi Normal guibg=#282A36 " 
-hi Normal guibg=NONE " disables background
-hi Normal guifg=#e8e8e8 " make text just off-white
+" hi Normal guibg=NONE " disables background
+" set background=light
 
 " =============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
