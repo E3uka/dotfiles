@@ -13,27 +13,27 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
-Plug 'morhetz/gruvbox'
 Plug 'axvr/photon.vim'
+Plug 'morhetz/gruvbox'
 
 " Editor
-Plug 'scrooloose/nerdcommenter'
 Plug 'machakann/vim-highlightedyank'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'rust-lang/rust.vim'
-Plug 'rhysd/vim-clang-format'
-Plug 'lervag/vimtex'
-Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
+Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'rhysd/vim-clang-format'
+Plug 'rust-lang/rust.vim'
 
 " Fuzzy finder
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Initialize plugin system
@@ -49,58 +49,61 @@ filetype plugin on
 
 set autoindent
 set encoding=utf8
-set noshowmode
 set hidden
-set nowrap
 set nojoinspaces
-set printfont=:h10
+set noshowmode
+set nowrap
 set printencoding=utf-8
+set printfont=:h10
 set printoptions=paper:letter
 set signcolumn=yes
 
 " Sane splits
-set splitright
 set splitbelow
+set splitright
 
 " Sane tabs
+set noexpandtab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
-set noexpandtab
 
 " Wrapping options
-set formatoptions=tc " wrap text and comments using textwidth
-set formatoptions+=r " continue comments when pressing ENTER in I mode
-set formatoptions+=q " enable formatting of comments with gq
-set formatoptions+=n " detect lists for formatting
 set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
+set formatoptions+=n " detect lists for formatting
+set formatoptions+=q " enable formatting of comments with gq
+set formatoptions+=r " continue comments when pressing ENTER in I mode
+set formatoptions=tc " wrap text and comments using textwidth
 
 " =============================================================================
 " " # GUI SETTINGS
 " =============================================================================
 
-set guioptions-=T "Remove toolbar
 set backspace=2 " backspace over newlines
-set nofoldenable
-set ttyfast
-set lazyredraw
-set synmaxcol=500
-set laststatus=2
-set relativenumber
-set number
-set diffopt+=iwhite " No whitespace in vimdiff
-set diffopt+=indent-heuristic 
 set colorcolumn=80
-set showcmd
+set diffopt+=indent-heuristic 
+set diffopt+=iwhite " No whitespace in vimdiff
+set guioptions-=T "Remove toolbar
+set laststatus=2
+set lazyredraw
 set mouse=a
-set shortmess+=c
+set nofoldenable
+set number
+set relativenumber
 set ruler
-
+set shortmess+=c
+set showcmd
+set synmaxcol=500
 set termguicolors
+set ttyfast
+
 colorscheme antiphoton
 
 " hi Normal guibg=NONE " disables background
 " set background=light
+"
+" off-white paper style
+hi Normal guibg=#FFFFEA 
 
 " =============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
@@ -121,7 +124,10 @@ au FileType php set colorcolumn=100
 " Rust
 au FileType rust set colorcolumn=100
 
-" Javascript/JSON
+" TypeScript
+au FileType typescriptreact set colorcolumn=100 
+
+" JavaScript/JSON
 au FileType javascript set colorcolumn=100
 au FileType javascript set shiftwidth=2
 au FileType javascript set softtabstop=2
@@ -143,7 +149,6 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
 
 " =============================================================================
 " " # KEYBOARD SHORTCUTS
