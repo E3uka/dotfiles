@@ -47,6 +47,9 @@ filetype plugin indent on
 syntax on
 filetype plugin on
 
+" Stop `helpful` comment newlines
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 set autoindent
 set encoding=utf8
 set hidden
