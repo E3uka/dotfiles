@@ -83,7 +83,7 @@ set formatoptions=tc " wrap text and comments using textwidth
 " =============================================================================
 
 set backspace=2 " backspace over newlines
-set colorcolumn=80
+set colorcolumn=81
 set diffopt+=indent-heuristic 
 set diffopt+=iwhite " No whitespace in vimdiff
 set guioptions-=T "Remove toolbar
@@ -106,32 +106,38 @@ colorscheme antiphoton
 " set background=light
 "
 " off-white paper style
-hi Normal guibg=#FFFFEA 
+ hi Normal guibg=#FFFFEA 
 
-" =============================================================================
+ "dark colour scheme
+"hi Normal guibg=#262626 
+
+" ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " =============================================================================
 
 " markdown column
-au FileType markdown set colorcolumn=80
+au FileType markdown set colorcolumn=101
 
 " SQL column
 au FileType sql set colorcolumn=
 
 " Python
-au FileType python set colorcolumn=100
+au FileType python set colorcolumn=101
+
+" Go
+au FileType go set colorcolumn=81
 
 " PHP
-au FileType php set colorcolumn=100
+au FileType php set colorcolumn=101
 
 " Rust
-au FileType rust set colorcolumn=100
+au FileType rust set colorcolumn=101
 
 " TypeScript
-au FileType typescriptreact set colorcolumn=100 
+au FileType typescriptreact set colorcolumn=101
 
 " JavaScript/JSON
-au FileType javascript set colorcolumn=100
+au FileType javascript set colorcolumn=101
 au FileType javascript set shiftwidth=2
 au FileType javascript set softtabstop=2
 au FileType javascript set tabstop=2
@@ -371,7 +377,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^={coc#status()}%{get(b:,'coc_current_function','')} 
+set statusline=%F%m%r%h%w\ %=%l,%v
+
 
 " Using CocList
 " Show all diagnostics
