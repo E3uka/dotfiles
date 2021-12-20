@@ -1,9 +1,9 @@
 let mapleader = "\<Space>"
 filetype off
 
-" =============================================================================
+" ==============================================================================
 " " # PLUGINS
-" =============================================================================
+" ==============================================================================
 
 call plug#begin('~/.vim/plugged')
 
@@ -39,9 +39,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Initialize plugin system
 call plug#end()
 
-" =============================================================================
+" ==============================================================================
 " " # EDITOR SETTINGS
-" =============================================================================
+" ==============================================================================
 
 filetype plugin indent on
 syntax on
@@ -78,9 +78,9 @@ set formatoptions+=q " enable formatting of comments with gq
 set formatoptions+=r " continue comments when pressing ENTER in I mode
 set formatoptions=tc " wrap text and comments using textwidth
 
-" =============================================================================
+" ==============================================================================
 " " # GUI SETTINGS
-" =============================================================================
+" ==============================================================================
 
 set backspace=2 " backspace over newlines
 set colorcolumn=81
@@ -106,14 +106,14 @@ colorscheme antiphoton
 " set background=light
 "
 " off-white paper style
- hi Normal guibg=#FFFFEA 
+" hi Normal guibg=#FFFFEA 
 
  "dark colour scheme
 "hi Normal guibg=#262626 
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
-" =============================================================================
+" ==============================================================================
 
 " markdown column
 au FileType markdown set colorcolumn=101
@@ -159,9 +159,9 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" =============================================================================
+" ==============================================================================
 " " # KEYBOARD SHORTCUTS
-" =============================================================================
+" ==============================================================================
 
 "split windows
 nmap ss :split<Return><C-w>l
@@ -204,6 +204,7 @@ nnoremap <C-y> 3<C-y>
 
 "NerdTree
 nmap <silent> se :NERDTreeToggle<Return>
+nmap <silent> sf :NERDTreeFind<Return>
 let g:NERDTreeWinSize=25
 
 " FZF settings
