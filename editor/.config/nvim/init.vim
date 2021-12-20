@@ -92,7 +92,7 @@ set lazyredraw
 set mouse=a
 set nofoldenable
 set number
-set relativenumber
+"set relativenumber
 set ruler
 set shortmess+=c
 set showcmd
