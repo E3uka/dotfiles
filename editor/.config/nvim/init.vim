@@ -23,7 +23,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -233,8 +233,7 @@ nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 "Ebuka Special
 " this one is called... huh?
 nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
-nnoremap <C-_> :call NERDComment(0,"toggle")<Return>
-vnoremap <C-_> :call NERDComment(0,"toggle")<Return>
+nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<Return>
 
 "Fatih Golang minis
 nmap gb :GoBuild<Return>
