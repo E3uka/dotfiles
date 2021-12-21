@@ -205,7 +205,7 @@ nnoremap <C-y> 3<C-y>
 "NerdTree
 nmap <silent> se :NERDTreeToggle<Return>
 nmap <silent> sf :NERDTreeFind<Return>
-let g:NERDTreeWinSize=25
+let g:NERDTreeWinSize=35
 
 " FZF settings
 nnoremap <leader><leader>f :Files<CR>
@@ -234,6 +234,7 @@ nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 " this one is called... huh?
 nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
 nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<Return>
+nnoremap <C-\> :call nerdcommenter#Comment(0, "toggle")<Return>
 
 "Fatih Golang minis
 nmap gb :GoBuild<Return>
