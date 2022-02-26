@@ -9,12 +9,13 @@ call plug#begin('~/.vim/plugged')
 
 " GUI 
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
 Plug 'axvr/photon.vim'
 Plug 'morhetz/gruvbox'
+Plug 'jnurmine/Zenburn'
 
 " Editor
 Plug 'machakann/vim-highlightedyank'
@@ -23,7 +24,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
-"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -100,7 +101,7 @@ set synmaxcol=500
 set termguicolors
 set ttyfast
 
-colorscheme antiphoton
+colorscheme zenburn
 
 " hi Normal guibg=NONE " disables background
 " set background=light

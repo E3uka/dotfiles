@@ -1,0 +1,118 @@
+{
+    "telemetry.telemetryLevel": "error",
+    // Window Stuff
+    "window.newWindowDimensions": "maximized",
+    "window.restoreWindows": "none",
+    "window.title": "${rootName}",
+    "window.titleBarStyle": "native",
+    // Workbench Stuff
+    "workbench.activityBar.visible": false,
+    "workbench.colorTheme": "Pale Fire High Contrast",
+    "workbench.editor.showTabs": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 16,
+    // Editor Stuff
+    "editor.accessibilitySupport": "off",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "editor.cursorSurroundingLines": 5,
+    "editor.dragAndDrop": false,
+    "editor.folding": false,
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontLigatures": true,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.tabCompletion": "onlySnippets",
+    // Breadcrumbs
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+    // Extension
+    "extensions.autoUpdate": true,
+    "extensions.ignoreRecommendations": true,
+    // Files
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 100,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": false,
+    "files.trimTrailingWhitespace": true,
+    // Terminal
+    "terminal.integrated.fontSize": 12,
+    "editor.fontSize": 14,
+    // Vim
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "s",
+                "s"
+            ],
+            "commands": [
+                ":split"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "v"
+            ],
+            "commands": [
+                ":vsplit"
+            ]
+        },
+        {
+            "before": [
+                "?"
+            ],
+            "commands": [
+                ":vsplit",
+                "editor.action.goToDeclaration",
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "l"
+            ],
+            "after": [
+                "<C-w>",
+                "l"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "h"
+            ],
+            "after": [
+                "<C-w>",
+                "h"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "j"
+            ],
+            "after": [
+                "<C-w>",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "s",
+                "k"
+            ],
+            "after": [
+                "<C-w>",
+                "k"
+            ]
+        }
+    ]
+}
