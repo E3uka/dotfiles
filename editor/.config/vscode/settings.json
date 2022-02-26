@@ -8,7 +8,7 @@
     // Workbench Stuff
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Pale Fire High Contrast",
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": true,
     "workbench.panel.defaultLocation": "right",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
@@ -47,6 +47,24 @@
     "editor.fontSize": 14,
     // Vim
     "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "t",
+                "n"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "t",
+                "p"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
         {
             "before": [
                 "s",

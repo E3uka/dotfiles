@@ -101,6 +101,9 @@ set synmaxcol=500
 set termguicolors
 set ttyfast
 
+"nerdtree on the right
+let g:NERDTreeWinPos = "right"
+
 colorscheme zenburn
 
 " hi Normal guibg=NONE " disables background
