@@ -115,6 +115,8 @@ colorscheme zenburn
  "dark colour scheme
 "hi Normal guibg=#262626 
 
+highlight clear LineNr
+
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " ==============================================================================
