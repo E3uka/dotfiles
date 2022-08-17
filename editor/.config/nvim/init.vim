@@ -104,7 +104,7 @@ set ttyfast
 "nerdtree on the right
 let g:NERDTreeWinPos = "right"
 
-colorscheme zenburn
+colorscheme antiphoton
 
 " hi Normal guibg=NONE " disables background
 " set background=light
@@ -242,12 +242,16 @@ nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
 nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<Return>
 nnoremap <C-\> :call nerdcommenter#Comment(0, "toggle")<Return>
 
+"Fix forward jumps
+nnoremap <C-n>i <C-i>
+
 "Fatih Golang minis
 nmap gb :GoBuild<Return>
-nmap gc :GoCoverage<Return>
+nmap gc :GoCoverageToggle<Return>
 nmap gR :GoRun<Return>
 nmap gt :GoTest<Return>
 nmap gD :GoDoc<Return>
+nmap gF :GoFmt<Return>
 nmap gh :GoSameIds<Return>
 nmap gH :GoSameIdsClear<Return>
 nmap gI :GoImports<Return>

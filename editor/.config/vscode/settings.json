@@ -5,7 +5,7 @@
     "window.restoreWindows": "none",
     "window.title": "${rootName}",
     "window.titleBarStyle": "native",
-    "workbench.colorTheme": "Pale Fire High Contrast",
+    "workbench.colorTheme": "Github Light Theme",
     "workbench.editor.showTabs": true,
     "workbench.panel.defaultLocation": "right",
     "workbench.sideBar.location": "right",
