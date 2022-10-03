@@ -31,3 +31,6 @@ alias mv="mv -i"
 # FZF and ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!.git/"'
+
+# Ignore duplicate commands
+setopt HIST_IGNORE_ALL_DUPS
