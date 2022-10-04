@@ -245,6 +245,13 @@ nnoremap <C-\> :call nerdcommenter#Comment(0, "toggle")<Return>
 "Fix forward jumps
 nnoremap <C-n>i <C-i>
 
+"Rust stuff
+nmap Rf :RustFmt<Return>
+nmap Rr :RustRun<Return>
+nmap Rt :RustTest<Return>
+nmap Ra :RustEmitAsm<Return>
+nmap Ri :RustEmitIr<Return>
+
 "Fatih Golang minis
 nmap gb :GoBuild<Return>
 nmap gc :GoCoverageToggle<Return>
