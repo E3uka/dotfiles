@@ -22,6 +22,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
 
 " Language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -237,8 +239,7 @@ nmap <expr> M ':%s/' .@/ . '//g<LEFT><LEFT>'
 nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 "Ebuka Special
-" this one is called... huh?
-nmap ? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
+nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
 nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<Return>
 nnoremap <C-\> :call nerdcommenter#Comment(0, "toggle")<Return>
 
