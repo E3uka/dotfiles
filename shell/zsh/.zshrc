@@ -23,6 +23,8 @@ alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
 alias gl="git log --all --graph --oneline --decorate -n"
+alias gwd="git diff --word-diff=color --word-diff-regex='\\w+'"
+alias gsd="git show --word-diff=color --word-diff-regex='\\w+'"
 
 # Safety Aliases
 alias rm="rm -i"
