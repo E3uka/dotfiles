@@ -85,6 +85,7 @@ set formatoptions=tc " wrap text and comments using textwidth
 " " # GUI SETTINGS
 " ==============================================================================
 
+set guifont=JetBrains\ Mono:h16
 set backspace=2 " backspace over newlines
 set colorcolumn=81
 set diffopt+=indent-heuristic 

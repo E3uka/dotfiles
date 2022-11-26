@@ -16,6 +16,9 @@ alias tmkill="tmux kill-session -t"
 alias tmls="tmux ls"
 alias gcl="git clone"
 alias nvi="neovide"
+alias srcz="source ~/.zshrc"
+alias srct="source ~/.tmux.conf"
+alias :q="exit"
 
 # Git Aliases
 alias gs="git status"
