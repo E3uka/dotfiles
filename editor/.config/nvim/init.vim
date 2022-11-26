@@ -81,11 +81,21 @@ set formatoptions+=q " enable formatting of comments with gq
 set formatoptions+=r " continue comments when pressing ENTER in I mode
 set formatoptions=tc " wrap text and comments using textwidth
 
+" Neovide specific settings
+if exists("g:neovide")
+	set guifont=JetBrains\ Mono:h16
+	let g:neovide_transparency = 0.88
+	let g:neovide_refresh_rate = 120
+	let g:neovide_refresh_rate_idle = 0
+	let g:neovide_hide_mouse_when_typing = v:true
+	let g:neovide_remember_window_size = v:true
+endif
+
+
 " ==============================================================================
 " " # GUI SETTINGS
 " ==============================================================================
 
-set guifont=JetBrains\ Mono:h16
 set backspace=2 " backspace over newlines
 set colorcolumn=81
 set diffopt+=indent-heuristic 
