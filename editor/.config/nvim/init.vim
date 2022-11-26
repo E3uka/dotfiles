@@ -106,7 +106,7 @@ set ttyfast
 "nerdtree on the right
 let g:NERDTreeWinPos = "right"
 
-colorscheme antiphoton
+colorscheme zenburn
 
 " hi Normal guibg=NONE " disables background
 " set background=light
