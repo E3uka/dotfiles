@@ -9,8 +9,6 @@ call plug#begin('~/.vim/plugged')
 
 " GUI 
 Plug 'preservim/nerdtree'
-" Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Themes
 Plug 'axvr/photon.vim'
@@ -23,7 +21,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-
 
 " Language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -84,20 +81,17 @@ set formatoptions=tc " wrap text and comments using textwidth
 " Neovide specific settings
 if exists("g:neovide")
 	set guifont=JetBrains\ Mono:h16
-	let g:neovide_transparency = 0.88
+	let g:neovide_transparency = 0.85
 	let g:neovide_refresh_rate = 120
 	let g:neovide_refresh_rate_idle = 0
 	let g:neovide_hide_mouse_when_typing = v:true
-	let g:neovide_remember_window_size = v:true
 endif
-
 
 " ==============================================================================
 " " # GUI SETTINGS
 " ==============================================================================
 
 set backspace=2 " backspace over newlines
-set colorcolumn=81
 set diffopt+=indent-heuristic 
 set diffopt+=iwhite " No whitespace in vimdiff
 set guioptions-=T "Remove toolbar
@@ -113,60 +107,28 @@ set showcmd
 set synmaxcol=500
 set termguicolors
 set ttyfast
-
-"nerdtree on the right
 let g:NERDTreeWinPos = "right"
-
 colorscheme zenburn
-
-" hi Normal guibg=NONE " disables background
-" set background=light
-"
-" off-white paper style
-" hi Normal guibg=#FFFFEA 
-
- "dark colour scheme
-"hi Normal guibg=#262626 
-
 highlight clear LineNr
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " ==============================================================================
 
-" markdown column
-au FileType markdown set colorcolumn=101
-
-" SQL column
-au FileType sql set colorcolumn=
-
-" Python
-au FileType python set colorcolumn=101
-
-" Go
-au FileType go set colorcolumn=81
-
-" PHP
-au FileType php set colorcolumn=101
-
-" Rust
-au FileType rust set colorcolumn=101
-
-" TypeScript
-au FileType typescriptreact set colorcolumn=101
-
-" JavaScript/JSON
-au FileType javascript set colorcolumn=101
-au FileType javascript set shiftwidth=2
-au FileType javascript set softtabstop=2
-au FileType javascript set tabstop=2
-au FileType json set colorcolumn=
-au FileType json set shiftwidth=2
-au FileType json set softtabstop=2
-au FileType json set tabstop=2
-
-" Yes please
 let g:rustfmt_autosave = 1
+
+augroup javascript_typescript_settings 
+	autocmd!
+	autocmd FileType typescript set shiftwidth=2
+	autocmd FileType typescript set softtabstop=2
+	autocmd FileType typescript set tabstop=2
+	autocmd FileType javascript set shiftwidth=2
+	autocmd FileType javascript set softtabstop=2
+	autocmd FileType javascript set tabstop=2
+	autocmd FileType json set shiftwidth=2
+	autocmd FileType json set softtabstop=2
+	autocmd FileType json set tabstop=2
+augroup END
 
 " Do not autoclose
 let g:autoclose = 0
@@ -409,7 +371,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 "set statusline^={coc#status()}%{get(b:,'coc_current_function','')} 
 set statusline=%F%m%r%h%w\ %=%l,%v
-
 
 " Using CocList
 " Show all diagnostics
