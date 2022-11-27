@@ -6,18 +6,19 @@ export WASMER_DIR="/Users/ebuka/.wasmer"
 
 # General Purpose Aliases
 alias vi="nvim"
-alias up="cd .."
 alias rgto="rg -i todo --trim"
 alias ls="exa"
 alias la="exa -a"
 alias ll="exa -alhF"
 alias tnew="tmux new -s"
-alias tkill="tmux kill-session -t"
+alias ta="tmux attach -t"
 alias tls="tmux ls"
+alias tkill="tmux kill-session -t"
 alias gcl="git clone"
 alias nvi="neovide --multigrid"
 alias srcz="source ~/.zshrc"
-alias srct="source ~/.tmux.conf"
+alias srct="tmux source-file ~/.tmux.conf"
+alias up="cd .."
 alias :q="exit"
 
 # Git Aliases
