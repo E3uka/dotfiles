@@ -18,6 +18,7 @@ alias gcl="git clone"
 alias nvi="neovide --multigrid"
 alias srcz="source ~/.zshrc"
 alias srct="tmux source-file ~/.tmux.conf"
+alias vse="vi ~/Projects/dotfiles/editor/.config/nvim/init.vim"
 alias up="cd .."
 alias :q="exit"
 

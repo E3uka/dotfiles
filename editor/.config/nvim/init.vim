@@ -59,7 +59,6 @@ set nowrap
 set printencoding=utf-8
 set printfont=:h10
 set printoptions=paper:letter
-set signcolumn=yes
 
 " Sane splits
 set splitbelow
@@ -110,7 +109,10 @@ set ttyfast
 let g:NERDTreeWinPos = "right"
 colorscheme zenburn
 hi Normal guibg=#062b2a " main background color
-highlight clear LineNr
+hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
+hi clear LineNr " clear the background on line numbers
+set signcolumn=no
+set cmdheight=1
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
@@ -253,17 +255,11 @@ set hidden
 set nobackup
 set nowritebackup
 
-" Better display for messages
-set cmdheight=2
-
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
 
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-
-" always show signcolumns
-set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
