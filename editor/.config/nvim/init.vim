@@ -109,6 +109,7 @@ set termguicolors
 set ttyfast
 let g:NERDTreeWinPos = "right"
 colorscheme zenburn
+hi Normal guibg=#062b2a " main background color
 highlight clear LineNr
 
 " ==============================================================================
