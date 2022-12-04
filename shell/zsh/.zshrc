@@ -33,6 +33,7 @@ alias gsd="git show --word-diff=color --word-diff-regex='\\w+'"
 
 # Safety Aliases
 alias rm="rm -i"
+alias rmrf="rm -i"
 alias mv="mv -i"
 
 # FZF and ripgrep
