@@ -220,8 +220,8 @@ nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 "Ebuka Special
 nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
-nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<Return>
-nnoremap <C-\> :call nerdcommenter#Comment(0, "toggle")<Return>
+nnoremap <C-_> :call nerdcommenter#Comment("x", "toggle")<Return>
+nnoremap <C-\> :call nerdcommenter#Comment("x", "toggle")<Return>
 
 "Fix forward jumps
 nnoremap <C-n>i <C-i>
