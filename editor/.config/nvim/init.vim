@@ -239,10 +239,6 @@ nmap gc :GoCoverageToggle<Return>
 nmap gR :GoRun<Return>
 nmap gt :GoTest<Return>
 nmap gD :GoDoc<Return>
-nmap gF :GoFmt<Return>
-nmap gh :GoSameIds<Return>
-nmap gH :GoSameIdsClear<Return>
-nmap gI :GoImports<Return>
 " Look into guru in the future - https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup and gorename
 set autowrite
 let g:go_def_mode='gopls'
@@ -321,7 +317,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>R <Plug>(coc-rename)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
