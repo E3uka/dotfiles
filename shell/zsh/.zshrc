@@ -6,7 +6,7 @@ export WASMER_DIR="/Users/ebuka/.wasmer"
 
 # General Purpose Aliases
 alias vi="nvim"
-alias rgto="rg -i todo --trim"
+alias rgto="rg -i todo --trim --no-hidden --no-ignore"
 alias ls="exa"
 alias la="exa -a"
 alias ll="exa -alhF"
