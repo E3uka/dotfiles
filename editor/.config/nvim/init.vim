@@ -215,8 +215,8 @@ nmap S :%s//g<LEFT><LEFT>
 nnoremap v <C-V>
 nnoremap <C-V> v
 nmap <silent> <BS> :nohlsearch<CR>
-nmap <expr> M ':%s/' .@/ . '//g<LEFT><LEFT>'
-nmap <expr> m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
+nmap <expr> <leader>M ':%s/' .@/ . '//g<LEFT><LEFT>'
+nmap <expr> <leader>m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 "Ebuka Special
 nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition) zz
