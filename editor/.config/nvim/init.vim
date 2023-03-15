@@ -84,7 +84,7 @@ set formatoptions=tc " wrap text and comments using textwidth
 " Neovide specific settings
 if exists("g:neovide")
 	set guifont=Menlo:h16
-	let g:neovide_transparency = 0.85
+	" let g:neovide_transparency = 0.85
 	let g:neovide_refresh_rate = 120
 	let g:neovide_refresh_rate_idle = 0
 	let g:neovide_hide_mouse_when_typing = v:true
@@ -204,7 +204,8 @@ nnoremap <leader>L :Locate /<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader><leader>l :BLines<CR>
 nnoremap <C-Tab> :Windows<CR>
-nnoremap <leader>r :Rg<CR>
+nnoremap <leader>r :call CocActionAsync('rename')<CR>
+nnoremap <leader><leader>r :Rg<CR>
 
 "Highlighting
 nnoremap <silent> <leader>h :syntax off<CR>
