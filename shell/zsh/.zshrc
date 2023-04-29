@@ -1,9 +1,5 @@
 . $(brew --prefix)/etc/profile.d/z.sh
 
-# Wasmer
-export WASMER_DIR="/Users/ebuka/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
-
 # General Purpose Aliases
 alias vi="nvim"
 alias rgto="rg -i todo --trim --no-hidden --no-ignore"
@@ -42,6 +38,13 @@ alias mv="mv -i"
 # FZF and ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!.git/"'
+
+# Wasmer
+export WASMER_DIR="/Users/ebuka/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# Zig
+path+=("/Users/ebuka/Projects/zig")
 
 # Ignore duplicate commands
 setopt HIST_IGNORE_ALL_DUPS
