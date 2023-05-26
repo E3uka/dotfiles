@@ -44,7 +44,7 @@ export WASMER_DIR="/Users/ebuka/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 # Zig
-path+=("/Users/ebuka/Projects/zig")
+path+=('/Users/ebuka/Projects/zig')
 
 # Ignore duplicate commands
 setopt HIST_IGNORE_ALL_DUPS
