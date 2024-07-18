@@ -181,7 +181,7 @@
             ]
         }
     ],
-    // Language Stuff
+    // Language Stuffs
     "go.toolsManagement.autoUpdate": true,
     "zig.zls.path": "/Users/ebuka/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
 }

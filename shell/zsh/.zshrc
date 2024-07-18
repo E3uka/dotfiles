@@ -66,8 +66,8 @@ setopt HIST_IGNORE_ALL_DUPS
 # -- Cynergy Settings --
 
 # Git
-export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_cynergy'
-export GOPRIVATE='gitlab.com/ebuka.a'
+#export GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519_cynergy'
+export GOPRIVATE='gitlab.com/cynergybank'
 
 # IBM MQ
 path+=('/opt/mqm/bin')
