@@ -57,9 +57,9 @@ set hidden
 set nojoinspaces
 set noshowmode
 set nowrap
-set printencoding=utf-8
-set printfont=:h10
-set printoptions=paper:letter
+" set printencoding=utf-8
+" set printfont=:h10
+" set printoptions=paper:letter
 
 " Case insensitive forward and backwards search
 set ignorecase
