@@ -42,6 +42,9 @@ alias rm="rm -i"
 alias rmrf="rm -i"
 alias mv="mv -i"
 
+# SSH Agent
+export SSH_AUTH_SOCK='/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock'
+
 # FZF and ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!.git/"'
@@ -52,6 +55,9 @@ export WASMER_DIR="/Users/ebuka/.wasmer"
 
 # Zig
 path+=('/Users/ebuka/Projects/zig')
+
+# Jujutsu GG
+path+=('/Applications/gg.app/Contents/MacOS/')
 
 # Go
 path+=('/Users/ebuka/go/bin')
