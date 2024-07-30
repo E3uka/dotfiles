@@ -113,6 +113,7 @@ set termguicolors
 set ttyfast
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeAutoDeleteBuffer = 1
 colorscheme zenburn
 hi Normal guibg=#062b2a " main background color
 hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
