@@ -55,7 +55,7 @@ path+=('/Users/ebuka/Projects/zig')
 
 # Go
 path+=('/Users/ebuka/go/bin')
-export GOPATH='/Users/ebuka/go/bin'
+export GOPATH='/Users/ebuka/go'
 
 # Docker
 path+=('/Applications/Docker.app/Contents/Resources/bin')
