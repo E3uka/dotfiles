@@ -14,6 +14,7 @@ Plug 'preservim/nerdtree'
 Plug 'axvr/photon.vim'
 Plug 'morhetz/gruvbox'
 Plug 'jnurmine/Zenburn'
+Plug 'yorickpeterse/nvim-grey'
 
 " Editor
 Plug 'machakann/vim-highlightedyank'
@@ -114,9 +115,9 @@ set ttyfast
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoDeleteBuffer = 1
-colorscheme zenburn
-hi Normal guibg=#062b2a " main background color
-hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
+colorscheme grey
+" hi Normal guibg=#062b2a " main background color
+" hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
 hi clear LineNr " clear the background on line numbers
 set signcolumn=no
 set cmdheight=1
@@ -243,7 +244,6 @@ nmap gc :GoCoverageToggle<Return>
 nmap gR :GoRun<Return>
 nmap gt :GoTest<Return>
 nmap gD :GoDoc<Return>
-" Look into guru in the future - https://github.com/fatih/vim-go/wiki/Tutorial#quick-setup and gorename
 set autowrite
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
