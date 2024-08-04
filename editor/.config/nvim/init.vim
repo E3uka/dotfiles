@@ -85,11 +85,14 @@ set formatoptions=tc " wrap text and comments using textwidth
 
 " Neovide specific settings
 if exists("g:neovide")
-	set guifont=Menlo:h16
-	" let g:neovide_transparency = 0.85
+	set guifont=JetBrains\ Mono:h14
 	let g:neovide_refresh_rate = 120
 	let g:neovide_refresh_rate_idle = 0
 	let g:neovide_hide_mouse_when_typing = v:true
+	let g:neovide_remember_window_size = v:true
+
+	" let g:neovide_transparency = 0.85
+	" let g:neovide_profiler = v:true
 endif
 
 " ==============================================================================
