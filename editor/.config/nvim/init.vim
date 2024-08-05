@@ -124,6 +124,8 @@ colorscheme grey
 hi clear LineNr " clear the background on line numbers
 set signcolumn=no
 set cmdheight=1
+" match Error /\%>120c/
+match ErrorMsg '\%>120v.\+'
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
