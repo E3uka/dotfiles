@@ -90,6 +90,9 @@ if exists("g:neovide")
 	let g:neovide_refresh_rate_idle = 0
 	let g:neovide_hide_mouse_when_typing = v:true
 	let g:neovide_remember_window_size = v:true
+	set title
+	set titlelen=0
+	set titlestring=%{getcwd()}
 
 	" let g:neovide_transparency = 0.85
 	" let g:neovide_profiler = v:true
