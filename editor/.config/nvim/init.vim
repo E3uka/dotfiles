@@ -118,9 +118,6 @@ set showcmd
 set synmaxcol=500
 set termguicolors
 set ttyfast
-let g:NERDTreeWinPos = "right"
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeAutoDeleteBuffer = 1
 colorscheme grey
 " hi Normal guibg=#062b2a " main background color
 " hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
@@ -206,6 +203,10 @@ nnoremap <C-y> 3<C-y>
 nmap <silent> se :NERDTreeToggle<Return>
 nmap <silent> sf :NERDTreeFind<Return>
 let g:NERDTreeWinSize=35
+let g:NERDTreeWinPos = "right"
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
 " FZF settings
 nnoremap <leader><leader>f :Files<CR>
