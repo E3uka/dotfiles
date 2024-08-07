@@ -368,10 +368,10 @@ omap af <Plug>(coc-funcobj-a)
 " xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use Tab to indent forward and backwards in normal mode
-nmap <Tab> >>
-nmap <s-Tab> <<
-vmap <Tab> >>
-vmap <s-Tab> <<
+" nmap <Tab> >>
+" nmap <s-Tab> <<
+" vmap <Tab> >>
+" vmap <s-Tab> <<
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
