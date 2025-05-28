@@ -66,6 +66,7 @@ path+=('/Applications/gg.app/Contents/MacOS/')
 
 # Go
 path+=('/Users/ebuka/go/bin')
+path+=('/opt/homebrew/opt/go@1.24/bin')
 export GOPATH='/Users/ebuka/go'
 
 # Docker
@@ -96,8 +97,12 @@ export SQL_HOST_VERIFICATION=false
 # GPG Key
 export GPG_PASSPHRASE='JI9Dq7CjwzkScBknvT20VHqgJEex6Txo'
 
+# Kubernetes
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ebuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ebuka/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ebuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ebuka/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"

@@ -3,17 +3,22 @@
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       "/": "buffer_search::Deploy",
-      "g f": "workspace::NewSearch",
-      "g t": "workspace::NewCenterTerminal",
       "g T": "workspace::NewTerminal",
-      "s h": ["workspace::ActivatePaneInDirection", "Left"],
-      "s j": ["workspace::ActivatePaneInDirection", "Down"],
-      "s k": ["workspace::ActivatePaneInDirection", "Up"],
-      "s l": ["workspace::ActivatePaneInDirection", "Right"],
+      "g f": "workspace::NewSearch",
+      "g i": "editor::GoToImplementation",
+      "g I": "editor::GoToImplementationSplit",
+      "g r": "editor::FindAllReferences",
+      "g R": "editor::Rename",
+      "g t": "workspace::NewCenterTerminal",
+      "s h": "workspace::ActivatePaneLeft",
+      "s j": "workspace::ActivatePaneDown",
+      "s k": "workspace::ActivatePaneUp",
+      "s l": "workspace::ActivatePaneRight",
       "s s": "pane::SplitDown",
       "s v": "pane::SplitRight",
       "t n": "pane::ActivateNextItem",
-      "t p": "pane::ActivatePrevItem"
+      "t p": "pane::ActivatePreviousItem"
     }
   }
 ]
+

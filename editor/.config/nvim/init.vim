@@ -124,8 +124,8 @@ colorscheme grey
 hi clear LineNr " clear the background on line numbers
 set signcolumn=no
 set cmdheight=1
-" match Error /\%>120c/
-match ErrorMsg '\%>120v.\+'
+" match ErrorMsg '\%>120v.\+'
+set colorcolumn=120
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
@@ -206,7 +206,7 @@ let g:NERDTreeWinSize=35
 let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeAutoDeleteBuffer = 1
-autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
+" autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
 
 " FZF settings
 nnoremap <leader><leader>f :Files<CR>

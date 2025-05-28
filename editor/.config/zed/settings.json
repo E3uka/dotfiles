@@ -7,20 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "collaboration_panel": {
-        "dock": "right"
-    },
-    "project_panel": {
-        "dock": "right"
-    },
-    "telemetry": {
-        "metrics": false
-    },
-    "theme": "One Light",
-    "buffer_font_family": "Menlo",
-    "buffer_font_size": 15,
-    "cursor_blink": false,
-    "format_on_save": "off",
-    "vim_mode": true,
-    "autosave": "on_focus_change"
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "telemetry": {
+    "metrics": false
+  },
+  "theme": "v0-light",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 13,
+  "cursor_blink": false,
+  "format_on_save": "on",
+  "vim_mode": true
 }
+
