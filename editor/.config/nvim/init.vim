@@ -32,6 +32,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
+Plug 'neoclide/jsonc.vim'
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -130,6 +131,9 @@ set colorcolumn=120
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " ==============================================================================
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 let g:rustfmt_autosave = 1
 
