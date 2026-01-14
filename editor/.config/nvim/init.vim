@@ -31,7 +31,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
-Plug 'ziglang/zig.vim'
+Plug 'https://codeberg.org/ziglang/zig.vim'
 Plug 'neoclide/jsonc.vim'
 
 " Fuzzy finder
@@ -120,6 +120,7 @@ set synmaxcol=500
 set termguicolors
 set ttyfast
 colorscheme grey
+hi NormalFloat guibg=#dce3e3 " main background color
 " hi Normal guibg=#062b2a " main background color
 " hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
 hi clear LineNr " clear the background on line numbers

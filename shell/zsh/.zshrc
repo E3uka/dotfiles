@@ -23,6 +23,7 @@ alias vbe="vi ~/Projects/dotfiles/shell/bat/config"
 alias vse="vi ~/Projects/dotfiles/editor/.config/nvim/init.vim"
 alias vze="vi ~/Projects/dotfiles/shell/zsh/.zshrc"
 alias vte="vi ~/Projects/dotfiles/terminal/.tmux.conf"
+alias vge="vi ~/.config/ghostty/config"
 
 # Git Aliases
 alias gb="git branch"
