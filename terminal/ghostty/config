@@ -2,7 +2,7 @@ copy-on-select = clipboard
 cursor-color = 86ADAD
 cursor-style = block
 cursor-style-blink = false
-font-size = 14
+font-size = 13
 mouse-hide-while-typing = true
 split-divider-color = F2F2F2
 
@@ -31,3 +31,4 @@ keybind = ctrl+a>ctrl+l=clear_screen
 keybind = ctrl+a>f=toggle_fullscreen
 keybind = ctrl+a>r=reload_config
 keybind = ctrl+a>z=toggle_split_zoom
+keybind = ctrl+a>x=close_surface

@@ -204,6 +204,12 @@ nmap tE :tabedit <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
+"ripgrep as vim grep
+if executable('rg')
+	set grepprg=rg\ --vimgrep\ -uu\ --smart-case\ --follow\ --iglob=!.git
+	set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 "NerdTree
 nmap <silent> se :NERDTreeToggle<Return>
 nmap <silent> sf :NERDTreeFind<Return>

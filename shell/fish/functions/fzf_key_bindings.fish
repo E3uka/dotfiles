@@ -1,1 +1,0 @@
-/home/ebuka/.fzf/shell/key-bindings.fish
