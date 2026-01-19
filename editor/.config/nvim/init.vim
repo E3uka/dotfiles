@@ -7,9 +7,6 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-" GUI 
-Plug 'preservim/nerdtree'
-
 " Themes
 Plug 'axvr/photon.vim'
 Plug 'jnurmine/Zenburn'
@@ -18,26 +15,28 @@ Plug 'yorickpeterse/nvim-grey'
 " Editor
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdcommenter'
+Plug 'stevearc/oil.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'https://codeberg.org/ziglang/zig.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/jsonc.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
-Plug 'https://codeberg.org/ziglang/zig.vim'
-Plug 'neoclide/jsonc.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+lua require("oil").setup()
 
 " ==============================================================================
 " " # EDITOR SETTINGS
@@ -176,24 +175,17 @@ if executable('rg')
 	set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
-" NerdTree
-nmap <silent> se :NERDTreeToggle<Return>
-nmap <silent> sf :NERDTreeFind<Return>
-let g:NERDTreeWinSize=35
-let g:NERDTreeWinPos = "right"
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeAutoDeleteBuffer = 1
-" autocmd VimEnter * NERDTree | wincmd p " Start NERDTree and put the cursor back in the other window.
+" Oil settings
+nnoremap <leader><leader>f :Oil --preview<CR>
 
 " FZF settings
-nnoremap <leader><leader>f :Files<CR>
 nnoremap <C-p> :Files<CR>
-nnoremap <leader>l :Lines<CR>
+nnoremap <leader><leader>l :BLines<CR>
+nnoremap <leader><leader>r :Rg<CR>
+nnoremap <leader>B :BMarks<CR>
 nnoremap <leader>L :Locate /<CR>
 nnoremap <leader>b :Buffer<CR>
-nnoremap <leader><leader>l :BLines<CR>
-nnoremap <C-Tab> :Windows<CR>
-nnoremap <leader><leader>r :Rg<CR>
+nnoremap <leader>l :Lines<CR>
 
 
 " Highlighting
