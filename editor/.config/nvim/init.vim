@@ -37,7 +37,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Initialize plugin system
 call plug#end()
 
 " ==============================================================================
@@ -173,7 +172,7 @@ nnoremap <C-y> 3<C-y>
 
 " ripgrep as vim grep
 if executable('rg')
-	set grepprg=rg\ --vimgrep\ -uu\ --smart-case\ --follow\ --iglob=!.git
+	set grepprg=rg\ --vimgrep\ -uu\ --smart-case\ --follow
 	set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
