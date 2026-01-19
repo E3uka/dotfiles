@@ -1,39 +1,31 @@
 . $(brew --prefix)/etc/profile.d/z.sh
 
 # General Purpose Aliases
-alias :q="exit"
-alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
 alias docker-compose="docker compose"
-alias gcl="git clone"
+alias docker="/Applications/Docker.app/Contents/Resources/bin/docker"
 alias la="eza -a"
 alias ll="eza -alhF"
 alias ls="eza"
-alias nvi="neovide --no-vsync &"
 alias rgfu="rg -i future --trim --no-hidden --no-ignore"
 alias rgto="rg -i todo --trim --no-hidden --no-ignore"
 alias srcz="source ~/Projects/dotfiles/shell/zsh/.zshrc"
-alias ta="tmux attach"
-alias tkill="tmux kill-session -t"
-alias tls="tmux ls"
-alias tnew="tmux new -s"
 alias up="cd .."
-alias vi="nvim"
 alias vbe="vi ~/Projects/dotfiles/shell/bat/config"
+alias vge="vi ~/.config/ghostty/config"
+alias vi="nvim"
 alias vse="vi ~/Projects/dotfiles/editor/.config/nvim/init.vim"
 alias vze="vi ~/Projects/dotfiles/shell/zsh/.zshrc"
-alias vte="vi ~/Projects/dotfiles/terminal/.tmux.conf"
-alias vge="vi ~/.config/ghostty/config"
 
 # Git Aliases
 alias gb="git branch"
 alias gc="git checkout"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gdw="git diff --word-diff=color --word-diff-regex='\\w+'"
 alias gl="git log --all --graph --oneline --decorate -n"
 alias gs="git status"
 alias gsh="git show"
 alias gshd="git show --word-diff=color --word-diff-regex='\\w+'"
-alias gdw="git diff --word-diff=color --word-diff-regex='\\w+'"
 alias gw="git worktree"
 alias gwa="git worktree add"
 alias gwl="git worktree list"
@@ -53,10 +45,6 @@ export SSH_AUTH_SOCK='/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 # FZF and ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
-
-# Wasmer
-export WASMER_DIR="/Users/ebuka/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
 
 # Zig
 path+=('/Users/ebuka/Projects/zig')
