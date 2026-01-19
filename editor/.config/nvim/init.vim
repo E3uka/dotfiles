@@ -1,6 +1,3 @@
-let mapleader = "\<Space>"
-filetype off
-
 " ==============================================================================
 " " # PLUGINS
 " ==============================================================================
@@ -42,93 +39,115 @@ lua require("oil").setup()
 " " # EDITOR SETTINGS
 " ==============================================================================
 
-filetype plugin indent on
-filetype plugin on
-syntax on
-
-" Stop `helpful` comment newlines
+" Stop `helpful` auto comment newlines
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-set autowrite
-set autoindent
-set encoding=utf8
-set hidden
-set nojoinspaces
-set noshowmode
-set nowrap
-
-" Case insensitive forward and backwards search
-set ignorecase
-set smartcase
-
-" Sane splits
-set splitbelow
-set splitright
-
-" Sane tabs
-set noexpandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-
-" Wrapping options
-set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
-set formatoptions+=n " detect lists for formatting
-set formatoptions+=q " enable formatting of comments with gq
-set formatoptions+=r " continue comments when pressing ENTER in I mode
-set formatoptions=tc " wrap text and comments using textwidth
-
-" ==============================================================================
-" " # GUI SETTINGS
-" ==============================================================================
-
-set backspace=2 " backspace over newlines
-set diffopt+=indent-heuristic 
-set diffopt+=iwhite " No whitespace in vimdiff
-set guioptions-=T "Remove toolbar
-set laststatus=2
-set lazyredraw
-set mouse=a
-set nofoldenable
-set number
-set relativenumber
-set ruler
-set shortmess+=c
-set showcmd
-set synmaxcol=500
-set termguicolors
-set ttyfast
 colorscheme grey
-set signcolumn=no
-set cmdheight=1
-set colorcolumn=120
+
+filetype off
+filetype plugin indent on
+filetype plugin on
 
 " hi Normal guibg=#062b2a " main background color
 " hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
 hi NormalFloat guibg=#dce3e3 " main background color
 hi clear LineNr " clear the background on line numbers
+
 let $FZF_DEFAULT_OPTS=' --color=bg:#dce3e3' "fzf background color
+let g:autoclose = 0 " Do not autoclose quick fix list
+let mapleader = "\<Space>"
+
+set autoindent
+set autoread
+set backspace=2 " backspace over newlines
+set backspace=indent,eol,nostop
+set backupcopy=auto
+set cmdheight=1
+set cmdwinheight=15
+set colorcolumn=120
+set comments=
+set conceallevel=1
+set confirm
+set diffopt+=indent-heuristic 
+set diffopt+=iwhite " No whitespace in vimdiff
+set encoding=utf8
+set eventignore=
+set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
+set formatoptions+=n " detect lists for formatting
+set formatoptions+=q " enable formatting of comments with gq
+set formatoptions+=r " continue comments when pressing ENTER in I mode
+set formatoptions=tc " wrap text and comments using textwidth
+set guioptions-=T "Remove toolbar
+set hidden
+set ignorecase
+set laststatus=2
+set mouse=nvi
+set noautochdir
+set noautowrite
+set noautowriteall
+set nobackup " Some servers have issues with backup files, see #649
+set noexpandtab
+set nofoldenable
+set nojoinspaces
+set nolazyredraw
+set noruler
+set noshelltemp
+set noshowmode
+set nowrap
+set nowritebackup
+set number
+set pumheight=0
+set relativenumber
+set rulerformat=
+set scrolljump=1
+set selection=old
+set selectmode=
+set shiftwidth=4
+set shortmess+=c " don't give |ins-completion-menu| messages.
+set showcmd
+set signcolumn=no
+set notitle
+set smartcase
+set smarttab
+set softtabstop=4
+set splitbelow
+set splitright
+set startofline
+set synmaxcol=500
+set tabstop=4
+set termsync " Vsync, but for Neovim.
+set titlelen=72
+set titleold=
+set titlestring=
+set ttyfast
+set updatetime=300 " You will have bad experience for diagnostic messages when it's default 4000.
+set ttimeout
+set ttimeoutlen=50
+set write
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
 " ==============================================================================
 
-let g:autoclose = 0 " Do not autoclose quick fix list
-
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-
+" Rust settings
 let g:rustfmt_autosave = 1
 
 " LaTeX settings
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
 let g:tex_conceal='abdmg'
+let g:tex_flavor='latex'
+let g:vimtex_quickfix_mode=0
+let g:vimtex_view_method='zathura'
+
+" Fatih Golang minis
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_fmt_autosave = 1 
+let g:go_imports_autosave = 0
+let g:go_mod_fmt_autosave = 0
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " ==============================================================================
-" " # KEYBOARD SHORTCUTS
+" " # KEYMAPS
 " ==============================================================================
 
 " split windows
@@ -157,6 +176,7 @@ function! s:list_cmd()
 	return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
 endfunction
 
+" navigate tabs
 nmap <silent> tn :tabnext<Return>
 nmap <silent> tp :tabprev<Return>
 
@@ -201,42 +221,10 @@ nmap <silent> <BS> :nohlsearch<CR>
 nmap <expr> <leader>M ':%s/' .@/ . '//g<LEFT><LEFT>'
 nmap <expr> <leader>m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
-" Ebuka Special
-nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
-
 " Fix forward jumps
 nnoremap <C-n>i <C-i>
 
-" Fatih Golang minis
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_fmt_autosave = 1 
-let g:go_imports_autosave = 0
-let g:go_mod_fmt_autosave = 0
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-
-" -------------------COC GITHUB STUFF------------------------------------
-
-" if hidden is not set, TextEdit might fail.
-set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
-" You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-" don't give |ins-completion-menu| messages.
-set shortmess+=c
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" -------------------COC GITHUB SANE CONFIGS------------------------------------
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -248,6 +236,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" documentation in new split
+nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
 
 " Use gh to show documentation in preview window
 nnoremap <silent> gh :call CocActionAsync('doHover')<CR>
