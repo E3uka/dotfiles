@@ -52,7 +52,7 @@ export SSH_AUTH_SOCK='/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 
 # FZF and ripgrep
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow -g "!.git/"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case --no-ignore-vcs'
 
 # Wasmer
 export WASMER_DIR="/Users/ebuka/.wasmer"

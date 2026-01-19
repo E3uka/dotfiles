@@ -107,6 +107,7 @@ set colorcolumn=120
 " hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
 hi NormalFloat guibg=#dce3e3 " main background color
 hi clear LineNr " clear the background on line numbers
+let $FZF_DEFAULT_OPTS=' --color=bg:#dce3e3' "fzf background color
 
 " ==============================================================================
 " " # LANGUAGE SPECIFIC SETTINGS
@@ -171,7 +172,7 @@ nnoremap <C-y> 3<C-y>
 
 " ripgrep as vim grep
 if executable('rg')
-	set grepprg=rg\ --vimgrep\ -uu\ --smart-case\ --follow
+	set grepprg=rg\ --vimgrep\ --hidden\ --smart-case\ --follow
 	set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
