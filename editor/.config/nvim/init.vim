@@ -5,8 +5,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Themes
-Plug 'axvr/photon.vim'
-Plug 'jnurmine/Zenburn'
 Plug 'yorickpeterse/nvim-grey'
 
 " Editor
@@ -48,8 +46,6 @@ filetype off
 filetype plugin indent on
 filetype plugin on
 
-" hi Normal guibg=#062b2a " main background color
-" hi Visual guifg=#062b2a guibg=#DADF89 ctermfg=236 ctermbg=210
 hi NormalFloat guibg=#dce3e3 " main background color
 hi clear LineNr " clear the background on line numbers
 
