@@ -11,6 +11,7 @@ Plug 'yorickpeterse/nvim-grey'
 Plug 'machakann/vim-highlightedyank'
 Plug 'scrooloose/nerdcommenter'
 Plug 'stevearc/oil.nvim'
+Plug 'stevearc/quicker.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
@@ -31,7 +32,10 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
-lua require("oil").setup()
+lua << EOF 
+	require("oil").setup()
+	require("quicker").setup()
+EOF
 
 " ==============================================================================
 " " # EDITOR SETTINGS
@@ -219,6 +223,9 @@ nmap <expr> <leader>m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 " Fix forward jumps
 nnoremap <C-n>i <C-i>
+
+" Quicker 
+autocmd FileType qf nmap <buffer> f <cmd>lua require('quicker').toggle_expand()<CR>
 
 " -------------------COC GITHUB SANE CONFIGS------------------------------------
 
