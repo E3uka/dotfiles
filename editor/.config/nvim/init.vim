@@ -16,7 +16,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
 " Language support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'https://codeberg.org/ziglang/zig.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
@@ -57,72 +56,45 @@ let $FZF_DEFAULT_OPTS=' --color=bg:#dce3e3' "fzf background color
 let g:autoclose = 0 " Do not autoclose quick fix list
 let mapleader = "\<Space>"
 
-set autoindent
-set autoread
+set autowrite
 set backspace=2 " backspace over newlines
 set backspace=indent,eol,nostop
-set backupcopy=auto
-set cmdheight=1
-set cmdwinheight=15
 set colorcolumn=120
-set comments=
-set conceallevel=1
 set confirm
 set diffopt+=indent-heuristic 
 set diffopt+=iwhite " No whitespace in vimdiff
 set encoding=utf8
-set eventignore=
 set formatoptions+=b " auto-wrap in insert mode, and do not wrap old long lines
 set formatoptions+=n " detect lists for formatting
 set formatoptions+=q " enable formatting of comments with gq
 set formatoptions+=r " continue comments when pressing ENTER in I mode
 set formatoptions=tc " wrap text and comments using textwidth
 set guioptions-=T "Remove toolbar
-set hidden
 set ignorecase
-set laststatus=2
-set mouse=nvi
-set noautochdir
-set noautowrite
-set noautowriteall
-set nobackup " Some servers have issues with backup files, see #649
-set noexpandtab
 set nofoldenable
-set nojoinspaces
-set nolazyredraw
 set noruler
 set noshelltemp
 set noshowmode
 set nowrap
-set nowritebackup
 set number
 set pumheight=0
 set relativenumber
 set rulerformat=
 set scrolljump=1
 set selection=old
-set selectmode=
 set shiftwidth=4
 set shortmess+=c " don't give |ins-completion-menu| messages.
-set showcmd
 set signcolumn=no
-set notitle
 set smartcase
-set smarttab
 set softtabstop=4
 set splitbelow
 set splitright
 set startofline
 set synmaxcol=500
 set tabstop=4
-set termsync " Vsync, but for Neovim.
 set titlelen=72
-set titleold=
-set titlestring=
 set ttyfast
 set updatetime=300 " You will have bad experience for diagnostic messages when it's default 4000.
-set ttimeout
-set ttimeoutlen=50
 set write
 
 " ==============================================================================
@@ -138,13 +110,12 @@ let g:tex_flavor='latex'
 let g:vimtex_quickfix_mode=0
 let g:vimtex_view_method='zathura'
 
-" Fatih Golang minis
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
-let g:go_fmt_autosave = 1 
-let g:go_imports_autosave = 0
-let g:go_mod_fmt_autosave = 0
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+" go settings
+autocmd FileType go setlocal makeprg=go\ build\ ./...
+command! GoTest setlocal makeprg=go\ test\ ./... | make | setlocal makeprg=go\ build\ ./...
+
+" zig settings
+let g:zig_fmt_parse_errors = 0
 
 " ==============================================================================
 " " # KEYMAPS
@@ -169,12 +140,6 @@ nmap <C-w><left> <C-w><
 nmap <C-w><right> <C-w>>
 nmap <C-w><up> <C-w>+
 nmap <C-w><down> <C-w>-
-
-" vim tabs
-function! s:list_cmd()
-	let base = fnamemodify(expand('%'), ':h:.:S')
-	return base == '.' ? 'fd --type file --follow' : printf('fd --type file --follow | proximity-sort %s', shellescape(expand('%')))
-endfunction
 
 " navigate tabs
 nmap <silent> tn :tabnext<Return>
@@ -208,7 +173,6 @@ nnoremap <leader>L :Locate /<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>l :Lines<CR>
 
-
 " Highlighting
 nnoremap <silent> <leader>h :syntax off<CR>
 nnoremap <silent> <leader><leader>h :syntax on<CR>
@@ -229,10 +193,8 @@ autocmd FileType qf nmap <buffer> f <cmd>lua require('quicker').toggle_expand()<
 
 " -------------------COC GITHUB SANE CONFIGS------------------------------------
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Organise imports on save
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -243,9 +205,6 @@ nmap <silent> gr <Plug>(coc-references)
 " documentation in new split
 nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
 
-" Use gh to show documentation in preview window
-nnoremap <silent> gh :call CocActionAsync('doHover')<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -253,6 +212,9 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Use gh to show documentation in preview window
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -272,16 +234,3 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Using CocList
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
