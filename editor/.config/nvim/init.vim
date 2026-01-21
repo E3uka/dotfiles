@@ -156,10 +156,13 @@ nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
 " ripgrep as vim grep
-if executable('rg')
-	set grepprg=rg\ --vimgrep\ --hidden\ --smart-case\ --follow
-	set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
+set grepprg=rg\ --vimgrep\ --hidden\ --smart-case\ --follow
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+augroup quickfix
+	autocmd!
+	autocmd QuickFixCmdPost [^l]* cwindow
+augroup END
 
 " Oil settings
 nnoremap <leader><leader>f :Oil --preview<CR>
