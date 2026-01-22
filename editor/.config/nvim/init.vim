@@ -199,14 +199,11 @@ autocmd FileType qf nmap <buffer> f <cmd>lua require('quicker').toggle_expand()<
 " Organise imports on save
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" documentation in new split
-nnoremap <leader>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
+" documentation in new split shortcut
+nnoremap <leader><nowait>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -217,13 +214,19 @@ function! s:show_documentation()
 endfunction
 
 " Use gh to show documentation in preview window
-nnoremap <silent> gh :call <SID>show_documentation()<CR>
+nnoremap <silent><nowait> gh :call <SID>show_documentation()<CR>
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" Remap keys for gotos
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
 
 " coc rename
-nnoremap <leader>r :call CocActionAsync('rename')<CR>
+nnoremap <leader><nowait> r :call CocActionAsync('rename')<CR>
+
+" coc outline
+nnoremap <nowait> go :<C-u>CocList outline<cr>
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
