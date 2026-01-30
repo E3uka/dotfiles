@@ -202,9 +202,6 @@ autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeIm
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" documentation in new split shortcut
-nnoremap <leader><nowait>? :vsplit <CR> <C-w>l <Plug>(coc-definition)
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -213,30 +210,19 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Use gh to show documentation in preview window
-nnoremap <silent><nowait> gh :call <SID>show_documentation()<CR>
-
 " Remap keys for gotos
+nmap <leader>ac  <Plug>(coc-codeaction) " Remap for do codeAction of current line
+nmap <leader>qf  <Plug>(coc-fix-current) " Fix autofix problem of current line
+nmap <silent><nowait> gR <Plug>(coc-rename)
 nmap <silent><nowait> gd <Plug>(coc-definition)
-nmap <silent><nowait> gy <Plug>(coc-type-definition)
 nmap <silent><nowait> gi <Plug>(coc-implementation)
 nmap <silent><nowait> gr <Plug>(coc-references)
-
-" coc rename
-nnoremap <leader><nowait> r :call CocActionAsync('rename')<CR>
-
-" coc outline
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
 nnoremap <nowait> go :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> gh :call <SID>show_documentation()<CR>
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
