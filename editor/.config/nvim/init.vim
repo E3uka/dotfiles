@@ -168,13 +168,13 @@ augroup END
 nnoremap <leader><leader>f :Oil --preview<CR>
 
 " FZF settings
-nnoremap <C-p> :Files<CR>
 nnoremap <leader><leader>l :BLines<CR>
-nnoremap <leader><leader>r :Rg<CR>
-nnoremap <leader>B :BMarks<CR>
-nnoremap <leader>L :Locate /<CR>
+nnoremap <leader><leader>m :BMarks<CR>
 nnoremap <leader>b :Buffer<CR>
 nnoremap <leader>l :Lines<CR>
+nnoremap <leader>m :Marks<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <leader>r :Rg<CR>
 
 " Highlighting
 nnoremap <silent> <leader>h :syntax off<CR>
@@ -185,8 +185,6 @@ nmap S :%s//g<LEFT><LEFT>
 nnoremap v <C-V>
 nnoremap <C-V> v
 nmap <silent> <BS> :nohlsearch<CR>
-nmap <expr> <leader>M ':%s/' .@/ . '//g<LEFT><LEFT>'
-nmap <expr> <leader>m ':.,$s/' .@/ . '//g<LEFT><LEFT>'
 
 " Fix forward jumps
 nnoremap <C-n>i <C-i>
