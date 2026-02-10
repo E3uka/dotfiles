@@ -9,7 +9,7 @@
 
 		// Show inlay hints in the editor. Inlay hints are short annotations within the code,
 		// which show variable types or parameter names.
-		// "inlayHint.enable": true,
+		"inlayHint.enable": false,
 
 		// Use the language server to perform code highlighting
 		"semanticTokens.enable": true
