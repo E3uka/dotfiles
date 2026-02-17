@@ -52,6 +52,9 @@ path+=('/Users/ebuka/Projects/zig')
 # Jujutsu GG
 path+=('/Applications/gg.app/Contents/MacOS/')
 
+# Git latest
+path+=('/opt/homebrew/bin/git')
+
 # Go
 path+=('/Users/ebuka/go/bin')
 path+=('/opt/homebrew/opt/go@1.24/bin')
