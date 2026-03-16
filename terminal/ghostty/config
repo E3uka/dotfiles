@@ -2,10 +2,13 @@ copy-on-select = clipboard
 cursor-color = 86ADAD
 cursor-style = block
 cursor-style-blink = false
-font-size = 13
+font-family = Maple Mono
+font-size = 14
 mouse-hide-while-typing = true
 split-divider-color = F2F2F2
 
+initial-window = false
+quit-after-last-window-closed = false
 window-inherit-working-directory = true
 window-save-state = always
 
