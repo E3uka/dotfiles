@@ -194,8 +194,9 @@ autocmd FileType qf nmap <buffer> f <cmd>lua require('quicker').toggle_expand()<
 
 " -------------------COC GITHUB SANE CONFIGS------------------------------------
 
-" Organise imports on save
+" Organise imports and format on save
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.formatDocument')
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
