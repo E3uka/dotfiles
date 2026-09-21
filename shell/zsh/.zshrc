@@ -46,8 +46,8 @@ export SSH_AUTH_SOCK='/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agen
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --smart-case'
 
-# Zig and ZLS executables
-path+=('/Users/ebuka/Projects/zig')
+# ZLS executables
+path+=('/Users/ebuka/Projects/zls/zig-out/bin')
 
 # Jujutsu GG
 path+=('/Applications/gg.app/Contents/MacOS/')
