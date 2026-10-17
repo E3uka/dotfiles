@@ -98,3 +98,6 @@ if [ -f '/Users/ebuka/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ebuka/goo
 if [ -f '/Users/ebuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ebuka/google-cloud-sdk/completion.zsh.inc'; fi
 export PATH="/opt/homebrew/opt/go@1.24/bin:$PATH"
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# Added by Antigravity CLI installer
+export PATH="/Users/ebuka/.local/bin:$PATH"
