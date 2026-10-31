@@ -13,6 +13,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'stevearc/oil.nvim'
 Plug 'stevearc/quicker.nvim'
 Plug 'tpope/vim-fugitive'
+Plug 'NicolasGB/jj.nvim'
 Plug 'tpope/vim-surround'
 
 " Language support
@@ -34,6 +35,7 @@ call plug#end()
 lua << EOF 
 	require("oil").setup()
 	require("quicker").setup()
+	require("jj").setup()
 EOF
 
 " ==============================================================================
