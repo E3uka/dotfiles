@@ -2,23 +2,30 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
-      "/": "buffer_search::Deploy",
-      "g T": "workspace::NewTerminal",
-      "g f": "workspace::NewSearch",
-      "g i": "editor::GoToImplementation",
-      "g I": "editor::GoToImplementationSplit",
-      "g r": "editor::FindAllReferences",
       "g R": "editor::Rename",
+      "g i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+      "g y": "editor::GoToTypeDefinition",
+      "space a c": "editor::ToggleCodeActions",
+
+      "/": "buffer_search::Deploy",
+      "space /": "workspace::NewSearch",
+
+      "s s": "pane::SplitDown",
+      "s v": "pane::SplitRight",
+      "t n": "pane::ActivateNextItem",
+      "t p": "pane::ActivatePreviousItem",
+
+      "space p": "file_finder::Toggle",
+
+      "space P": "command_palette::Toggle",
+
+      "g T": "workspace::NewTerminal",
       "g t": "workspace::NewCenterTerminal",
       "s h": "workspace::ActivatePaneLeft",
       "s j": "workspace::ActivatePaneDown",
       "s k": "workspace::ActivatePaneUp",
       "s l": "workspace::ActivatePaneRight",
-      "s s": "pane::SplitDown",
-      "s v": "pane::SplitRight",
-      "t n": "pane::ActivateNextItem",
-      "t p": "pane::ActivatePreviousItem"
-    }
-  }
+    },
+  },
 ]
-
