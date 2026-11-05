@@ -1,6 +1,6 @@
 [aliases]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
-tail = ["log", "-n"]
+tail = ["log", "-n", "10"]
 
 [ui]
 diff-editor = ":builtin"
